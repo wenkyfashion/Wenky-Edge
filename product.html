@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product - Wenky Edge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="product.css" />
+  <link rel="stylesheet" href="profilePic.css" />
+</head>
+<body>
+
+  <header>
+    <div class="left-icons">
+      <span class="hamburger" onclick="history.back()">←</span>
+    </div>
+    <div class="right-icons">
+      <span class="cart-icon" onclick="window.location.href='cart.html'">🛒</span>
+      <span class="login-icon" id="profile-icon" onclick="window.location.href='profile.html'">👤</span>
+    </div>
+  </header>
+
+  <main id="productDetails" class="product-container">
+    <p>Loading...</p>
+  </main>
+
+  <footer>
+    &copy; Wenky Edge 2025 <br />
+    Made with ❤️
+  </footer>
+
+  <script type="module" src="product.js"></script>
+  <script type="module" src="profilePic.js"></script>
+</body>
+</html>

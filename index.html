@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <title>Wenky Edge - Fashion, Style & Lifestyle Trends</title>
+  <meta name="description" content="Wenky Edge - Where style meets simplicity. Discover fashion, clothing, accessories, and lifestyle products that define your look. Shop the latest trends online now.">
+  <meta name="keywords" content="Wenky Edge, online fashion store, trendy clothes, buy accessories online, stylish outfits, men fashion, women fashion, lifestyle shopping, modern wear, latest fashion trends">
+  <meta name="author" content="Wenky Edge">
+  <meta name="robots" content="index, follow">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="navbar.css" />
+</head>
+<body>
+
+  <header>
+    <div class="left-icons">
+      <span class="hamburger" onclick="toggleMenu()">☰</span>
+    </div>
+
+    <div class="right-icons">
+      <span class="cart-icon" onclick="window.location.href='cart.html'">🛒</span>
+      <span class="login-icon" id="profile-icon" onclick="goToProfile()">👤</span>
+    </div>
+  </header>
+
+  <!-- Menu (Hidden initially) -->
+  <nav class="menu" id="menu">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms & Conditions</a></li>
+    </ul>
+  </nav>
+
+  <main class="content">
+    <div class="text-content">
+      <h1>
+        <img src="wenky-edge.png" alt="Wenky Edge" height="120px" width="auto">
+      </h1>
+      <p>Where style meets simplicity – discover your next look now!</p>
+  
+      <div class="auth-section" id="login-btns">
+        <button id="login-btn">Login with <img src="google-logo.png" alt="Google" height="15px" width="auto"></button>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    &copy; Wenky Edge 2025 <br />
+    Made with ❤️
+  </footer>
+
+  <script type="module" src="script.js"></script>
+  <script src="toggleMenu.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

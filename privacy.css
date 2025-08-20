@@ -1,0 +1,38 @@
+.privacy-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  color: var(--dark);
+  line-height: 1.7;
+  margin-bottom: 10rem;
+}
+
+.hero {
+  padding: 1rem 2rem;
+  background-color: var(--beige);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.33);
+}
+
+.privacy-content h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--accent, #f4c430);
+}
+
+.privacy-content h2 {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+}
+
+.privacy-content p {
+  margin-top: 0.6rem;
+  font-size: 1rem;
+}
+
+@media (max-width: 600px) {
+  .privacy-content {
+    padding: 1rem;
+  }
+}

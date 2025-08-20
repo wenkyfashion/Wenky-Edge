@@ -1,0 +1,70 @@
+{
+  "Andhra Pradesh": ["Visakhapatnam","Vijayawada","Guntur","Nellore","Tirupati","Kurnool","Eluru","Rajahmundry","Tiruvuru","Nandyal","Adoni","Amaravati","Anantapur","Chittoor","Kadapa","Kakinada","Machilipatnam","Srikakulam","Vizianagaram","Yemmiganur"],
+  
+  "Arunachal Pradesh": ["Itanagar"],
+  
+  "Assam": ["Guwahati","Dispur","Tezpur","Dibrugarh","Silchar","Nagaon","Jorhat","Sivasagar","Dhubri","Tinsukia"],
+  
+  "Bihar": ["Patna","Gaya","Bhagalpur","Muzaffarpur","Purnia","Darbhanga","Arrah","Begusarai","Bihar Sharif","Bodh Gaya","Buxar","Chhapra","Hajipur","Jam alpur","Katihar","Madhubani","Motihari","Munger","Samastipur","Sasaram","Sitamarhi","Siwan"],
+  
+  "Chhattisgarh": ["Raipur","Bhilai","Bilaspur","Durg","Jagdalpur","Ambikapur","Raigarh","Rajnandgaon","Korba"],
+  
+  "Goa": ["Panaji","Madgaon","Vasco-da-Gama","Ponda","Margao","Mapusa","Goa Velha"],
+  
+  "Gujarat": ["Ahmedabad","Surat","Vadodara","Rajkot","Bhavnagar","Jamnagar","Gandhinagar","Junagadh"],
+  
+  "Haryana": ["Gurugram","Faridabad","Panipat","Ambala","Rohtak","Sonipat","Chandigarh"],
+  
+  "Himachal Pradesh": ["Shimla","Mandi","Dharamshala","Solan","Bilaspur","Chamba"],
+  
+  "Jharkhand": ["Ranchi","Jamshedpur","Dhanbad","Bokaro","Hazaribagh","Deoghar"],
+  
+  "Karnataka": ["Bengaluru","Hubballi–Dharwad","Mangaluru","Mysuru","Belagavi","Davangere"],
+  
+  "Kerala": ["Thiruvananthapuram","Kochi","Kozhikode","Thrissur","Kollam","Alappuzha","Malappuram","Kozhikode UA cities: Malappuram, Thrissur, Kollam, Kochi, Kozhikode, Kannur"] ,
+  
+  "Madhya Pradesh": ["Bhopal","Indore","Jabalpur","Gwalior","Ujjain","Sagar","Raipur (if considering new capital region)", "Indore included UA; also Bhopal, Jabalpur, Gwalior"] ,
+  
+  "Maharashtra": ["Mumbai","Pune","Nagpur","Nashik","Thane","Solapur","Aurangabad","Amravati","Surat UA overlap (its Gujarat)", "Nagpur, Nashik, Aurangabad included"] ,
+  
+  "Manipur": ["Imphal"],
+  
+  "Meghalaya": ["Shillong"],
+  
+  "Mizoram": ["Aizawl"],
+  
+  "Nagaland": ["Kohima","Dimapur"],
+  
+  "Odisha": ["Bhubaneswar","Cuttack","Rourkela","Berhampur","Puri","Sambalpur"],
+  
+  "Punjab": ["Ludhiana","Amritsar","Jalandhar","Patiala","Bathinda","Kapurthala"],
+  
+  "Rajasthan": ["Jaipur","Jodhpur","Udaipur","Kota","Bikaner","Ajmer"],
+  
+  "Sikkim": ["Gangtok","Namchi","Gyalshing","Mangan"],
+  
+  "Tamil Nadu": ["Chennai","Coimbatore","Madurai","Tiruchirappalli","Salem","Tiruppur","Erode","Vellore"],
+  
+  "Telangana": ["Hyderabad","Warangal","Khammam","Nizamabad","Karimnagar","Adilabad"],
+  
+  "Tripura": ["Agartala","Amarpur","Kumarghat","Udaipur (Tripura)","Gakulnagar","Kunjaban"],
+  
+  "Uttar Pradesh": ["Lucknow","Kanpur","Prayagraj","Ghaziabad","Varanasi","Meerut","Aligarh","Bareilly","Agra","Noida","Moradabad","Gorakhpur","Saharanpur","Meerut, Aligarh, Bareilly, Agra included as UAs"],
+  
+  "Uttarakhand": ["Dehradun","Haridwar","Roorkee"],
+  
+  "West Bengal": ["Kolkata","Asansol","Siliguri","Durgapur","Howrah","Darjeeling"]
+  
+  ,
+  "Chandigarh": ["Chandigarh"],
+  
+  "Delhi": ["New Delhi","Delhi"],
+  
+  "Jammu and Kashmir": ["Srinagar","Jammu"],
+  
+  "Ladakh": ["Leh","Kargil"],
+  
+  "Puducherry": ["Puducherry"],
+  
+  "Dadra and Nagar Haveli and Daman and Diu": ["Daman","Diu","Silvassa"]
+}

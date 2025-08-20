@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pay via UPI - Wenky Edge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="navbar.css"/>
+  <link rel="stylesheet" href="profilePic.css"/>
+  <style>
+    .upi-container {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      margin-bottom: 10rem;
+    }
+    .upi-container button {
+      width: 100%;
+      background-color: black;
+      color: white;
+      padding: 0.8rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .upi-container button:hover {
+      background-color: #222;
+    }
+    
+    .upi-container input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left-icons">
+      <span class="hamburger" onclick="history.back()">←</span>
+    </div>
+    <div class="right-icons">
+      <span class="cart-icon" onclick="window.location.href='cart.html'">🛒</span>
+      <span class="login-icon" id="profile-icon" onclick="window.location.href='profile.html'">👤</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="upi-container">
+      <h2>Pay with UPI 📲</h2><br />
+      <div id="upiOrderInfo"></div>
+      <p><strong>Pay here to confirm your order:</strong></p>
+      <h3 id="upiId">loading...</h3>
+      <canvas id="upiQR"></canvas>
+      
+      <br />
+      <label for="paymentScreenshot">Upload Payment Screenshot:</label>
+      <input type="file" id="paymentScreenshot" accept="image/*" />
+      <img id="preview" style="display:none; max-width:100%; margin:1rem 0; border-radius:8px;" />
+      
+      <button id="markPaid">I have paid</button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Wenky Edge 2025 <br />
+    Made with ❤️
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js"></script>
+
+  <script type="module" src="upi.js"></script>
+  <script type="module" src="profilePic.js"></script>
+</body>
+</html>

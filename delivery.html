@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delivery - Wenky Edge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="delivery.css" />
+  <link rel="stylesheet" href="profilePic.css" />
+</head>
+<body>
+
+  <header>
+    <div class="left-icons">
+      <span class="hamburger" onclick="history.back()">←</span>
+    </div>
+    <div class="right-icons">
+      <span class="cart-icon" onclick="window.location.href='cart.html'">🛒</span>
+      <span class="login-icon" id="profile-icon" onclick="window.location.href='profile.html'">👤</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="delivery-container">
+      <h2>Delivery Details 🚚</h2>
+
+      <div class="product-info" id="productInfo"></div>
+
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" min="1" value="1" />
+
+      <input type="text" id="name" placeholder="Full Name" />
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" placeholder="+91" />
+      <textarea id="address" rows="3" placeholder="Enter full delivery address"></textarea>
+
+      <select id="state"><option value="">Select State / UT</option></select>
+      <select id="city"><option value="">Select City</option></select>
+      
+      <input type="text" id="town_village" placeholder="Town / Village" />
+      <input type="text" id="pin" placeholder="PIN Code" />
+
+      <button onclick="confirmOrder()">Place Order</button>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Wenky Edge 2025 <br /> Made with ❤️
+  </footer>
+
+  <script type="module" src="delivery.js"></script>
+  <script type="module" src="profilePic.js"></script>
+</body>
+</html>

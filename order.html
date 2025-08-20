@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Placed - Wenky Edge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="order.css" />
+</head>
+<body>
+  <div class="center-screen">
+    <div class="tick-container">
+      <div class="tick-mark"></div>
+    </div>
+    <h2>Order Placed Successfully!</h2>
+  </div>
+
+  <!-- Audio -->
+  <audio id="successSound" src="order-success.mp3"></audio>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const sound = document.getElementById("successSound");
+    
+      // Attempt to play the sound after a small delay
+      setTimeout(() => {
+        sound.play().catch(err => {
+          console.warn("Sound play blocked by browser:", err);
+        });
+      }, 200); // Adjust delay if needed
+    
+      // Redirect after animation
+      setTimeout(() => {
+        window.location.href = "home.html";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>

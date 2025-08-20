@@ -1,0 +1,32 @@
+[
+  {
+    "id": "moon-and-star-pendant-necklace",
+    "name": "Moon & Star Pendant Necklace",
+    "price": 149,
+    "images": [
+      "starpendent1.jpg",
+      "starpendent2.jpg"
+    ],
+    "description": "Add a touch of elegance and celestial charm to your outfit with this minimal yet classy necklace. <br />• Design: Stylish moon & star drop pendant <br />• Material: Lightweight & skin-friendly <br />• Occasion: Perfect for daily wear, parties, or gifting"
+  },
+  {
+    "id": "Pink-Heart-Drop-Earrings",
+    "name": "Pink Heart Drop Earrings",
+    "price": 69,
+    "images": [
+      "heartearring1.jpg",
+      "heartearring2.jpg"
+    ],
+    "description": "Add a touch of romance to your look with these elegant pink crystal heart earrings. Designed with a golden hook and lightweight charm, they’re perfect for everyday wear or special occasions. <br />• Design: Faceted pink heart crystal with golden hook. <br />• Style: Cute, classy & versatile. <br />• Comfort: Lightweight & easy to wear."
+  },
+  {
+    "id": "Red-Beaded-Adjustable-Bracelet",
+    "name": "Red Beaded Adjustable Bracelet",
+    "price": 129,
+    "images": [
+      "beadedbracelet1.jpg",
+      "beadedbracelet2.jpg"
+    ],
+    "description": "Elevate your style with this elegant red beaded bracelet, designed with glossy round beads and delicate golden accents. Its adjustable chain ensures a perfect fit for all wrist sizes, making it both stylish and comfortable. <br />• Design: Glossy red beads with golden detailing. <br />• Fit: Adjustable chain for all wrist sizes. <br />• Style: Perfect for daily wear, parties, or gifting. <br />• Comfort: Lightweight and skin-friendly."
+  }
+]

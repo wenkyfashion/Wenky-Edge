@@ -1,0 +1,48 @@
+.about-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  line-height: 1.7;
+  color: var(--dark);
+  margin-bottom: 10rem;
+}
+    
+.hero {
+  padding: 1rem 2rem;
+  background-color: var(--beige);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.33);
+}
+
+.about-content h1 {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.about-content h2 {
+  font-size: 1.3rem;
+  magin-top: 2rem;
+  color: #333;
+}
+
+.about-content p, .about-content li {
+  font-size: 1rem;
+  margin-top: 0.7rem;
+}
+
+.about-content ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.about-content ul li::before {
+  content: "✧ ";
+  color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .about-content {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile - Wenky Edge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="navbar.css" />
+  <link rel="stylesheet" href="profile.css" />
+  <style>
+    .profile-pic {
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px auto;
+      display: none;
+    }
+
+    .login-icon img {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="left-icons">
+      <span class="hamburger" onclick="toggleMenu()">☰</span>
+    </div>
+
+    <div class="right-icons">
+      <span class="cart-icon" onclick="window.location.href='cart.html'">🛒</span>
+      <span class="login-icon" id="profile-icon">👤</span>
+    </div>
+  </header>
+
+  <!-- Menu (Hidden initially) -->
+  <nav class="menu" id="menu">
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="privacy.html">Privacy Policy</a></li>
+      <li><a href="terms.html">Terms & Conditions</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <div class="profile-container">
+      <h1>Your Profile</h1>
+      <img id="profile-pic" class="profile-pic" src="" width="120px" height="120px" alt="Profile Picture" />
+      <p id="user-email" style="font-weight: bold;">Loading...</p>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </main>
+  
+  <footer>
+    &copy; Wenky Edge 2025 <br />
+    Made with ❤️
+  </footer>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js";
+    import {
+      getAuth,
+      onAuthStateChanged,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-auth.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDwgvrtQEI_lMKVExy0sx7cJV0uE8HikTc",
+      authDomain: "wenky-fashion.firebaseapp.com",
+      projectId: "wenky-fashion",
+      storageBucket: "wenky-fashion.firebasestorage.app",
+      messagingSenderId: "278566676880",
+      appId: "1:278566676880:web:e24e379fcacd332a6eab15",
+      measurementId: "G-EQMVJ92EXC"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth();
+
+    const userEmail = document.getElementById('user-email');
+    const profilePic = document.getElementById('profile-pic');
+    const logoutBtn = document.getElementById('logout-btn');
+    const profileIcon = document.getElementById('profile-icon');
+
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+        userEmail.textContent = `Logged in as: ${user.email}`;
+
+        if (user.photoURL) {
+          // Show profile picture in body
+          profilePic.src = user.photoURL;
+          profilePic.style.display = 'block';
+
+          // Replace header icon with profile picture
+          profileIcon.innerHTML = `<img src="${user.photoURL}" alt="Profile" style="width: 30px; height: 30px; border-radius: 50%;" />`;
+        } else {
+          // If no profile photo, keep default 👤
+          profilePic.style.display = 'none';
+          profileIcon.textContent = '👤';
+        }
+      } else {
+        // Not logged in
+        alert("Login to see your profile")
+        window.location.href = 'index.html';
+      }
+    });
+
+    logoutBtn.addEventListener('click', () => {
+      signOut(auth).then(() => {
+        window.location.href = 'index.html';
+      });
+    });
+  </script>
+
+  <script src="toggleMenu.js"></script>
+</body>
+</html>

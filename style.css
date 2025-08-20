@@ -1,0 +1,96 @@
+.content {
+  flex: 1;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.text-content {
+  background: rgb(200, 200, 200, 0.8);
+  border-radius: 20px;
+  padding: 1rem;
+}
+
+.content h1 {
+  font-size: 2.5rem;
+  font-family: 'Pacifico', sans-serif;
+  color: var(--orange);
+  margin-bottom: 0rem;
+}
+
+.content p {
+  font-size: 1.1rem;
+  color: #FFF4EB;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+@keyframes login {
+  0% {
+    background: var(--orange);
+    box-shadow: 0 0 20px var(--orange);
+  }
+  25% {
+    background: #FF9C41;
+    box-shadow: 0 0 20px #FF9C41;
+  }
+  50% {
+    background: #FFDDBD;
+    color: #FF7A00;
+    box-shadow: 0 0 20px #FFDDBD;
+  }
+  75% {
+    background: #FF9C41;
+    box-shadow: 0 0 20px #FF9C41;
+  }
+  100% {
+    background: #FF8A20;
+    box-shadow: 0 0 20px #FF8A20;
+  }
+}
+
+.auth-section #login-btn {
+  background: var(--orange);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: none;
+  animation: login 3.5s linear infinite;
+}
+
+.auth-section #login-btn:active {
+  background: linear-gradient(to right, var(--orange), #FF993A, #FFA95B, #FFC38C, #FFDFC1, #FFECDC);
+  animation: none;
+}
+
+#explore-btn {
+  background-color: white;
+  color: var(--orange);
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+  animation: none;
+}
+
+#explore-btn:hover {
+  background-color: #FFD2A1E0;
+  color: white;
+}
+
+#explore-btn:active {
+  background-color: var(--orange);
+  color: white;
+}
