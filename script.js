@@ -10,7 +10,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDwgvrtQEI_lMKVExy0sx7cJV0uE8HikTc",
   authDomain: "wenky-fashion.firebaseapp.com",
   projectId: "wenky-fashion",
-  storageBucket: "wenky-fashion.firebasestorage.app",
+  storageBucket: "wenky-fashion.appspot.com",  // ✅ fixed
   messagingSenderId: "278566676880",
   appId: "1:278566676880:web:e24e379fcacd332a6eab15",
   measurementId: "G-EQMVJ92EXC"
@@ -57,5 +57,9 @@ onAuthStateChanged(auth, (user) => {
 
 // Go to profile
 window.goToProfile = () => {
-  window.location.href = 'profile.html';
+  if (auth.currentUser) {
+    window.location.href = 'profile.html';
+  } else {
+    alert("Please login first to view your profile.");
+  }
 };
