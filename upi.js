@@ -17,64 +17,52 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth();
 
 let userEmail = ""; // logged-in email
-
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    userEmail = user.email;
-    console.log("✅ Logged-in email:", userEmail);
-  } else {
-    alert("⚠️ Please login to continue");
-    window.location.href = "index.html";
-  }
-});
-
-// --- Load latest order ---
 let latestOrder = JSON.parse(localStorage.getItem("latestOrder"));
+const upiId = "6000015907@ybi";
+let screenshotBase64 = "";
+
+// --- Check order existence ---
 if (!latestOrder) {
   alert("⚠️ No order found. Please place an order first.");
   window.location.href = "home.html";
   throw new Error("No latestOrder in localStorage");
 }
 
-// --- UPI QR Setup ---
-const upiId = "6000015907@ybi";
-const upiString = `upi://pay?pa=${upiId}&pn=Wenky%20Edge&am=${latestOrder.total}&cu=INR`;
+// --- Render order details ---
+function renderOrderInfo() {
+  const upiOrderInfo = document.getElementById("upiOrderInfo");
 
-const upiOrderInfo = document.getElementById("upiOrderInfo");
-upiOrderInfo.innerHTML = `
-  <h3>${latestOrder.product.name}</h3>
-  <p><b>Quantity:</b> ${latestOrder.quantity}</p>
-  <p><b>Total:</b> ₹${latestOrder.total}</p>
+  upiOrderInfo.innerHTML = `
+    <h3>${latestOrder.product.name}</h3>
+    <p><b>Quantity:</b> ${latestOrder.quantity}</p>
+    <p><b>Total:</b> ₹${latestOrder.total}</p>
 
-  <div style="margin:10px 0; padding:10px; border:1px solid #ddd; border-radius:8px;">
-    <h4>Customer Details</h4>
-    <p><b>Name:</b> ${latestOrder.userInfo.name}</p>
-    <p><b>Phone:</b> ${latestOrder.userInfo.phone}</p>
-    <p><b>Email:</b> ${userEmail || "Not provided"}</p>
-    <p><b>Address:</b> ${latestOrder.userInfo.fullAddress}</p>
-  </div>
+    <div style="margin:10px 0; padding:10px; border:1px solid #ddd; border-radius:8px;">
+      <h4>Customer Details</h4>
+      <p><b>Name:</b> ${latestOrder.userInfo.name}</p>
+      <p><b>Phone:</b> ${latestOrder.userInfo.phone}</p>
+      <p><b>Email:</b> ${userEmail || "Not provided"}</p>
+      <p><b>Address:</b> ${latestOrder.userInfo.fullAddress}</p>
+    </div>
 
-  <p style="margin-top:10px; font-weight:bold;">
-    Pay here to confirm your order: 
-    <a href="${upiString}" style="color:#007bff; text-decoration:underline;">
-      ${upiId}
-    </a>
-  </p>
+    <p style="margin-top:10px; font-weight:bold;">
+      Pay here to confirm your order: ${upiId}
+    </p>
+    <div id="qr-wrapper" style="margin:15px 0; text-align:center;">
+      <canvas id="upiQR"></canvas>
+    </div>
+  `;
 
-  <div id="qr-wrapper" style="margin:15px 0; text-align:center;">
-    <canvas id="upiQR"></canvas>
-  </div>
-`;
+  // Generate QR
+  const upiString = `upi://pay?pa=${upiId}&pn=Wenky%20Edge&am=${latestOrder.total}&cu=INR`;
+  QRCode.toCanvas(document.getElementById("upiQR"), upiString, { width: 200 }, (err) => {
+    if (err) console.error("❌ QR generation failed:", err);
+  });
+}
 
-// Generate QR Code
-QRCode.toCanvas(document.getElementById("upiQR"), upiString, { width: 200 }, (err) => {
-  if (err) console.error("❌ QR generation failed:", err);
-});
-
-// --- Screenshot Upload ---
+// --- Screenshot Upload Preview ---
 const fileInput = document.getElementById("paymentScreenshot");
 const previewImg = document.getElementById("preview");
-let screenshotBase64 = "";
 
 fileInput.addEventListener("change", () => {
   const file = fileInput.files[0];
@@ -162,7 +150,7 @@ async function sendToShiprocket(order) {
   }
 }
 
-// --- On "I have paid" ---
+// --- Handle "I have paid" ---
 document.getElementById("markPaid").addEventListener("click", async () => {
   if (!screenshotBase64) {
     alert("⚠️ Please upload your payment screenshot.");
@@ -176,4 +164,16 @@ document.getElementById("markPaid").addEventListener("click", async () => {
 
   alert("✅ Payment submitted! We will confirm your order soon.");
   window.location.href = "order.html";
+});
+
+// --- Wait for Firebase login ---
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    userEmail = user.email;
+    console.log("✅ Logged-in email:", userEmail);
+    renderOrderInfo(); // only render after email available
+  } else {
+    alert("⚠️ Please login to continue");
+    window.location.href = "index.html";
+  }
 });
