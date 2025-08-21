@@ -1,5 +1,5 @@
 const CONFIG = {
-  mode: "test", // "test" or "live"
+  mode: "live", // "test" or "live"
 
   whatsapp: {
     number: "919365050542" // your WhatsApp number (without +)
