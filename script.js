@@ -10,7 +10,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDwgvrtQEI_lMKVExy0sx7cJV0uE8HikTc",
   authDomain: "wenky-fashion.firebaseapp.com",
   projectId: "wenky-fashion",
-  storageBucket: "wenky-fashion.appspot.com",  // ✅ fixed
+  storageBucket: "wenky-fashion.firebasestorage.app",
   messagingSenderId: "278566676880",
   appId: "1:278566676880:web:e24e379fcacd332a6eab15",
   measurementId: "G-EQMVJ92EXC"
